@@ -19,7 +19,7 @@ You'll see the following `NameError`:
 
 ```code
 File "/workspaces/import-warmup/run-exercises.py", line 2, in <module>
-    my_portfolio = portfolio.create_portfolio("Retirement")
+    my_portfolio = portfolio.data.create_portfolio("Retirement")
                    ^^^^^^^^^
 NameError: name 'portfolio' is not defined
 ```
