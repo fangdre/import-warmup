@@ -61,7 +61,7 @@ You'll know you succeeded when running `python3.14 run-exercises.py` results in 
 In this exercise, you'll see how refactoring code can break our imports, and how import statements must be refactored to suit the changes.
 
 #### Step 1
-Review the code in `portfolio/assets.py`. A recent code review suggested that `calculate_asset_value()` and `calculate_portfolio_value()` does not belong in `portfolio/assets.py` because it acts upon an asset rather than being part of an asset. It also doesn't belong in `portfolio/report.py` because it's not about a report, either.
+Review the code in `portfolio/assets.py` and `portfolio/report.py` and notice that the `calculate_asset_value()` and `calculate_portfolio_value()` functions are repeated in each file. Furthermore, a recent code review suggested that neither function belongs in `portfolio/assets.py` because they act upon an asset rather than being part of an asset. They also don't belong in `portfolio/report.py` because they're not about a report, either.
 
 Create a new module called `portfolio/metrics.py`. Refactor the two functions into this file and import them back into the original file(s). Do not change any other code in the original file(s) (i.e., make the `import` statements work with the existing code rather than changing the existing code to make your `import` statements work.)
 
@@ -76,16 +76,17 @@ You'll know you succeeded if:
 1. What would happen if the module got moved into another subfolder? How would you correct these errors?
 
 ### Exercise 3: Packages and Collisions
+Our code is looking good, but having all of the modules lumped into the `portfolio` folder makes it hard to understand how each module is linked to the others. Packages are one way to provide organization to your codebase, but the imports you use change when this structure changes.
 
 This exercise will give you practice with using import statements within packages, specifically with using relative imports, as well as the errors that can happen with name collisions and how to resolve them.
 
 #### Step 1: Add a package to your current project
-Within the `portfolio/` directory, add a subdirectory called `core/`, and add an `__init__.py` file to `core/`.
+Within the `portfolio/` directory, add a subdirectory called `core/`. Add an empty `__init__.py` file to `core/`.
 
 #### Step 2: Move in some files
 Move `assets.py` and `metrics.py` into `core/`. Your directory structure should look like this when you're finished:
 
-TODO ADD IMAGE
+![alt text](.devcontainer/image.png)
 
 At this point, executing `run-exercises.py` will result in a `ModuleNotFoundError`.
 
