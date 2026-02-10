@@ -61,4 +61,4 @@ This Codespace can be restarted from the same place simply by clicking on it in 
 1. Click Codespaces
 1. In the Your Codespaces section, click on the three dots menu to the right of the codespace and click Delete
 
-For more information on GitHub Codespaces, check out the (documentation)[https://docs.github.com/en/codespaces].
+For more information on GitHub Codespaces, check out the [documentation](https://docs.github.com/en/codespaces).
